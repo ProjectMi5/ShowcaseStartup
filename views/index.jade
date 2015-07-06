@@ -1,0 +1,19 @@
+extends layout
+
+block content
+	div
+		a(onclick='startVM("vm_id_1")') VM1_name
+		a(onclick='startVM("vm_id_2")') VM2_name
+		a(onclick='startVM("vm_id_3")') VM3_name
+		a(onclick='startVM("vm_id_4")') VM4_name
+
+		a(id='sender',style='border: 1px solid black') Send a Message on this button
+
+		ul(id='receiver')
+
+		p=virtualMachines
+
+		each vm in virtualMachines
+			p=vm.id
+			p=vm.name
+			a(onclick='startVM('+vm.id+')')=vm.name
